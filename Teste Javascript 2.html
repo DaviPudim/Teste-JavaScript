@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Cálculo de Média</title>
+</head>
+
+<body>
+	<style type="text/css">
+		body {
+			background-color: black ;
+		}
+
+		div#interface {
+			width: 950px;
+			background-color: black;
+			margin: -80px auto 0px auto;
+			box-shadow: 0px 0px 10px rgb(153, 255, 0);
+			padding: 90px;
+		}
+
+		header#cabecalho h1 {
+			font-size: 35pt;
+			color: #000000;
+			padding: 0px;
+			margin-bottom: 0px;
+		}
+	</style>
+	<div id="interface">
+		<header id="cabecalho">
+			<hgroup>
+				<h1 style="color:rgb(153, 255, 0)">Cálculo de Média</h1>
+			</hgroup>
+		</header>
+
+		<h2 style="color:rgb(153, 255, 0)">Situação acadêmica</h2>
+			<p style="color: rgb(153, 255, 0)">Se o aluno tiver sua média superior ao número 6, eventualmente sua situação será como "Aprovado",
+                mas caso seja média inferior ao número 6, sua situação será de "Reprovado":
+            </p>
+            <fieldset style="color: rgb(153, 255, 0);">
+		<h3>Nome: <span id="nom"></span></h3>
+		<h3>Média: <span id="med"></span></h3>
+		<h3>Situação: <span id="sit"></span></h3>
+            </fieldset>
+		<script>
+			let nome = prompt('Informe Seu Nome');
+			{ document.getElementById('nom').innerHTML = nome };
+			let n1 = parseFloat(prompt('informe a Primeira Nota:'));
+			let n2 = parseFloat(prompt('informe a Segunda Nota:'));
+			let media = (n1 + n2) / 2;
+			if (media >= 6) {
+				document.getElementById('med').innerHTML = media;
+				document.getElementById('sit').innerHTML = 'Aprovado';
+				document.getElementById('sit').style.color = 'blue';
+			} else {
+				document.getElementById('med').innerHTML = media;
+				document.getElementById('sit').innerHTML = 'Reprovado';
+				document.getElementById('sit').style.color = 'red';
+			}
+		</script>
+	</div>
+</body>
+
+</html>
